@@ -65,3 +65,36 @@ body {
     margin-bottom: 8px;
     padding-bottom: 4px;
 }
+
+.spacing {
+    margin-bottom: 20px;
+    /* Adjust the value to control the spacing */
+}
+
+
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: snowfall 10s linear infinite;
+    z-index: 0;
+}
+
+.snowflake {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100%);
+    }
+}
