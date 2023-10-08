@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Expense Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<div class="container">
-    <div id="header">
-        <h1>Personal Expense Tracker 💸 </h1>
+    <div class="container">
+        <div id="header">
+            <h1>Personal Expense Tracker 💸 </h1>
+        </div>
+
+        <div id="expense-form">
+            <h2>Add an Expense $</h2>
+            <form id="form">
+                <label for="description"><b>Description:</b></label>
+                <input type="text" id="description" required placeholder="e.g., Grocery, Gas, Dinner">
+                <div class="spacing"></div>
+
+                <label for="amount"><b>Amount:</b></label>
+                <input type="number" id="amount" required placeholder="Enter a number in $">
+                <div class="spacing"></div>
+
+                <label for="category"><b>Category:</b></label>
+                <input type="text" id="category" required placeholder="e.g., Food, Transportation">
+                <div class="spacing"></div>
+
+                <label for="date"><b>Date:</b></label>
+                <input type="date" id="date" required>
+
+                <button type="button" onclick="addExpense()">Add Expense</button>
+            </form>
+        </div>
+
+        <div id="expenses-card">
+            <h2>Total Expenses 💰 </h2>
+            <div id="total-expenses"> $0.00 </div>
+        </div>
+
+        <div id="expenses-list">
+            <h2><b>Expenses 💰</b></h2>
+            <ul id="list"></ul>
+        </div>
     </div>
-    
-    <div id="expense-form">
-        <h2>Add Expense</h2>
-        <form id="form">
-            <label for="description">Description:</label>
-            <input type="text" id="description" required>
 
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" required>
+    <div id="snowfall"></div>
 
-            <label for="category">Category:</label>
-            <input type="text" id="category" required>
+    <script src="app.js"></script>
 
-            <label for="date">Date:</label>
-            <input type="date" id="date" required>
 
-            <button type="button" onclick="addExpense()">Add Expense</button>
-        </form>
-    </div>
-
-    <div id="expenses-card">
-        <h2>Total Expenses 💰 </h2>
-        <div id="total-expenses"> $0.00 </div>
-    </div>
-
-    <div id="expenses-list">
-        <h2>Expenses</h2>
-        <ul id="list"></ul>
-    </div>
-</div>
-
-<script src="app.js"></script>
 </body>
+
 </html>

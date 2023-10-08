@@ -61,3 +61,29 @@ function updateTotalExpenses() {
     const total = expenses.reduce((acc, expense) => acc + expense.amount, 0);
     totalExpenses.textContent = `$${total.toFixed(2)}`;
 }
+
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random falling speed
+    document.getElementById('snowfall').appendChild(snowflake);
+
+    snowflake.addEventListener('animationiteration', () => {
+        snowflake.style.left = `${Math.random() * 100}vw`; // Reset horizontal position
+        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Reset falling speed
+    });
+}
+
+function createSnowflakes(num) {
+    for (let i = 0; i < num; i++) {
+        createSnowflake();
+    }
+}
+
+createSnowflakes(50); // Create initial snowflakes
+
+// Create more snowflakes periodically
+setInterval(() => {
+    createSnowflakes(10);
+}, 3000);
