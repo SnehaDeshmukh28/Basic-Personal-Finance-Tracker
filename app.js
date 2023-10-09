@@ -58,8 +58,8 @@ function updateExpensesList() {
 }
 
 function updateTotalExpenses() {
-    const total = expenses.reduce((acc, expense) => acc + expense.amount, 0);
-    totalExpenses.textContent = `$${total.toFixed(2)}`;
+    const total = expenses.reduce((acc, expense) => acc + Math.round(expense.amount), 0);
+    totalExpenses.textContent = `$${total}`;
 }
 
 function createSnowflake() {
